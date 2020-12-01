@@ -2,13 +2,14 @@
 <html>
   <head>
     <title>Instagram clone</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <%= csrf_meta_tags %>
+   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
   <body>
     <body>
-    <header class="header">
+    <header class="container">
 
         <% if logged_in? %>
           <ul>
@@ -25,11 +26,13 @@
       <% end %>
     </header>
     <% flash.each do |key, value| %>
-    <div class="alert alert-danger" role="alert">
+
       <%= content_tag(:div, value, class: "#{key}") %>
-    </div>
+
     <% end %>
+
     <%= yield %>
+    <%= render 'shared/navbar'  %>
     <footer>
       <p>© 2020 Copyright Facebook_clone </p>
     </footer>
