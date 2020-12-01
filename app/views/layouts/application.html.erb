@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Instagram clone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <%= favicon_link_tag 'images.png' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <body>
-    <header class="header_container">
+    <header class="header">
 
         <% if logged_in? %>
           <ul>
@@ -35,8 +29,10 @@
       <%= content_tag(:div, value, class: "#{key}") %>
     </div>
     <% end %>
-
-    <%= render 'shared/navbar'  %>
     <%= yield %>
+    <footer>
+      <p>© 2020 Copyright Facebook_clone </p>
+    </footer>
+
   </body>
 </html>
