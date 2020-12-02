@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
- before_action :current_user
- before_action :authenticate_user
- before_action :logged_in?
 
  def index
    @posts = Post.all
@@ -67,6 +64,6 @@ class PostsController < ApplicationController
  end
 
  def post_params
-   params.require(:post).permit(:id, :image, :image_cache, :user_id, :name, :email, :posts)
+   params.require(:post).permit(:image, :image_cache, :user_id, :name, :email, :posts)
  end
 end
